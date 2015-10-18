@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/asar"
+            android:checked="true"
+            android:title="آثار" />
+
+        <item
+            android:id="@+id/bio"
+            android:checked="false"
+            android:title="بیوگرافی" />
+
+        <item
+            android:id="@+id/ertebat"
+            android:checked="false"
+            android:title="ارتباط با ما" />
+
+        <item
+            android:id="@+id/news"
+            android:checked="false"
+            android:title="اخبار" />
+
+    </group>
+</menu>
