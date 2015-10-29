@@ -12,7 +12,7 @@ import com.mahmoud.mahmoudapp.R;
 public class BiographyFragment extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_main, container, false);
+        View view = inflater.inflate(R.layout.bio, container, false);
 
 
         return view;

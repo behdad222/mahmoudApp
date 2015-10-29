@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="بیوگرافی کاوه گلستان
+        در سال 1329 در آبادان به دنیا آمد.
+        یک‌ساله بود که با خانواده‌اش به تهران آمد و در تهران بزرگ شده بود."
+        android:textSize="10sp"
+        android:layout_margin="50dp"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal" />
+    </ScrollView>roll
+</LinearLayout>
