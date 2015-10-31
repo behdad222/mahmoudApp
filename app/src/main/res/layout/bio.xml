@@ -2,47 +2,63 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="3">
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+
+
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView"></ScrollView>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="بیوگرافی کاوه گلستان\n
-من تو او \n
-سلام اوسکول چت\n
-"
-        android:textSize="20sp"
-
-        android:id="@+id/textView"
-        android:textColor="#111"
-        android:layout_gravity="right"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="74dp"
-        android:layout_below="@+id/scrollView"
-        android:layout_toEndOf="@+id/scrollView"
-        android:layout_alignParentRight="true"
-        />
-    <ImageView
-        android:alpha=".5"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/imageView"
-        android:src="@mipmap/kave1"
-        android:foregroundGravity="center_horizontal"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/scrollView2">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:weightSum="1">
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="399dp"
+                android:layout_height="218dp"
+                android:id="@+id/imageView"
+                android:src="@mipmap/kave"
+                android:layout_weight="0.13" />
 
 
 
 
+            <TextView
+            android:textStyle="normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="بیوگرافی کاوه گلستان\n\n
+در سال 1329 در آبادان به دنیا آمد و در تهران بزرگ شد. \n\n
+تا کلاس هفتم در ایران درس خواند و از 13 سالگی برای ادامه تحصیل به یک مدرسه شبانه‌روزی در انگلستان رفت. \n\n
+در سال 1347 به تهران بازگشت. \n \n
+در سال‌های 1348 تا 1350 در شرکت‌های تبلیغاتی به عنوان عکاس و انیماتور مشغول به کار شد. \n\n
+کار حرفه‌ای عکاسی را در 1350-1351 با اولین ماموریت مطبوعاتی‌اش که تهیه عکس و گزارش جنگ در ایرلند شمالی بود شروع کرد. \n \n
+1352 عکاسی از کودکان گوشه و کنار ایران برای انتشارات فرانکلین. \n\n
+انتشار کتاب قلمکار در کانون پرورش فکری کودکان و نوجوانان . \n\n
+1353 نمایشگاه عکس‌های کودکان ایران در گالری سیحون. \n\n
+نمایشگاه کولاژهای پلورایدی از دیو و دد... در گالری سیحون. \n \n
+انتشار گلاب در کانون پرورش فکری کودکان و نوجوانان. \n\n
+"
+            android:textSize="15sp"
 
+            android:id="@+id/textView2"
+            android:gravity="right"
+        android:layout_marginTop="20dp"
+
+            android:textColor="#000"
+        android:layout_gravity="right"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+        android:layout_below="@+id/scrollView2"
+        android:layout_alignParentEnd="true"
+                />
+        </LinearLayout>
+
+</ScrollView>
 
 </RelativeLayout>
