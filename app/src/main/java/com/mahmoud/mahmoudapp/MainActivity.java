@@ -9,11 +9,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.content.Context;
+import android.graphics.Typeface;
 
-import com.mahmoud.mahmoudapp.View.Fragment.AkhbarFragment;
+import com.mahmoud.mahmoudapp.View.Fragment.AboutFragment;
 import com.mahmoud.mahmoudapp.View.Fragment.AsarFragment;
 import com.mahmoud.mahmoudapp.View.Fragment.BiographyFragment;
 import com.mahmoud.mahmoudapp.View.Fragment.ErtebatBaMaFragment;
+
+
+
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;
@@ -96,16 +101,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
 
 
-            case R.id.news:
-                fragment = new AkhbarFragment();
+            case R.id.about:
+                fragment = new AboutFragment();
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.frame, fragment)
                         .commit();
                 return true;
 
+            case R.id.exit:
+
+                finish();
+                return true;
+
             default:
                 return false;
+
 
 
         }

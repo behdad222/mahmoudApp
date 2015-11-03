@@ -12,10 +12,10 @@ import com.mahmoud.mahmoudapp.R;
 /**
  * Created by behdad on 10/15/15.
  */
-public class AkhbarFragment extends Fragment  {
+public class AboutFragment extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.akhbar, container, false);
+        View view = inflater.inflate(R.layout.about, container, false);
 
 
         return view;
