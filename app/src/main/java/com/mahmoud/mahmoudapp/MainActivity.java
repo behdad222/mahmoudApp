@@ -9,15 +9,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.content.Context;
-import android.graphics.Typeface;
+import android.widget.Button;
+import android.widget.RelativeLayout;
+
 
 import com.mahmoud.mahmoudapp.View.Fragment.AboutFragment;
 import com.mahmoud.mahmoudapp.View.Fragment.AsarFragment;
 import com.mahmoud.mahmoudapp.View.Fragment.BiographyFragment;
 import com.mahmoud.mahmoudapp.View.Fragment.ErtebatBaMaFragment;
-
-
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -28,6 +27,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -109,10 +111,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .commit();
                 return true;
 
+
             case R.id.exit:
 
                 finish();
                 return true;
+
+
 
             default:
                 return false;
