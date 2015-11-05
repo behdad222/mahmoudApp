@@ -9,15 +9,13 @@ import android.view.ViewGroup;
 
 import com.mahmoud.mahmoudapp.R;
 
-/**
- * Created by behdad on 10/15/15.
- */
 public class ErtebatBaMaFragment extends Fragment  {
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.ertebat, container, false);
+    public View onCreateView(
+            LayoutInflater inflater,
+            @Nullable ViewGroup container,
+            @Nullable Bundle savedInstanceState) {
 
-
-        return view;
+        return inflater.inflate(R.layout.ertebat, container, false);
     }
 }

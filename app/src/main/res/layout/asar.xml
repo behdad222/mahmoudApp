@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="1">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <Button
         android:layout_width="246dp"
@@ -11,8 +12,8 @@
         android:layout_marginRight="20dp"
         android:text="مجموعه ۱"
         android:id="@+id/bmajmoe1"
-        android:layout_gravity="right"
-        android:layout_weight="0.03" />
+        android:layout_gravity="right" />
+
     <Button
         android:layout_width="246dp"
         android:layout_height="wrap_content"
@@ -20,8 +21,8 @@
         android:layout_marginRight="20dp"
         android:text="مجموعه ۲"
         android:id="@+id/bmajmoe2"
-        android:layout_gravity="right"
-        android:layout_weight="0.03"/>
+        android:layout_gravity="right"/>
+
     <Button
         android:layout_width="246dp"
         android:layout_height="wrap_content"
@@ -29,6 +30,6 @@
         android:layout_marginRight="20dp"
         android:text="مجموعه ۳"
         android:id="@+id/bmajmoe3"
-        android:layout_gravity="right"
-        android:layout_weight="0.03"/>
+        android:layout_gravity="right"/>
+
 </LinearLayout>

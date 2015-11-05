@@ -11,10 +11,11 @@ import com.mahmoud.mahmoudapp.R;
 
 public class BiographyFragment extends Fragment  {
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.bio, container, false);
+    public View onCreateView(
+            LayoutInflater inflater,
+            @Nullable ViewGroup container,
+            @Nullable Bundle savedInstanceState) {
 
-
-        return view;
+        return inflater.inflate(R.layout.bio, container, false);
     }
 }

@@ -9,15 +9,13 @@ import android.view.ViewGroup;
 
 import com.mahmoud.mahmoudapp.R;
 
-/**
- * Created by behdad on 10/15/15.
- */
 public class AsarFragment extends Fragment  {
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.asar, container, false);
+    public View onCreateView(
+            LayoutInflater inflater,
+            @Nullable ViewGroup container,
+            @Nullable Bundle savedInstanceState) {
 
-
-        return view;
+        return inflater.inflate(R.layout.asar, container, false);
     }
 }

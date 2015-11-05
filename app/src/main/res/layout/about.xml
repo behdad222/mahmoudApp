@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="به نام خداوند جان آفرین\n\n
-نرم‌افزاری که هم اکنون پیش روی شماست پروژه‌ی پایان دوره‌ی کارشناسی اینجانب محمود عرفاتی دانشجوی رشته فناوری‌ اطلاعات دانشگاه آزاد پرند به شماره دانشجویی ۸۹۰۵۵۱۶۷۰ است.\n\n
-دلیل انتخاب این موضوع برای پروژه علاقه‌ی بنده به هنر عکاسی است که همواره در کنار رشته‌ی تحصیلی به آن پرداختم.\n\n
-"
+        android:text="@string/about"
         android:textSize="15sp"
         android:textAlignment="gravity"
-        android:textColor="#000"
+        android:textColor="@color/colorText"
         android:layout_margin="30dp"
         android:id="@+id/textView"
-        android:layout_gravity="left" />
+        android:layout_gravity="start" />
+
 </LinearLayout>
