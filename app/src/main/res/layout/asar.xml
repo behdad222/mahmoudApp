@@ -1,35 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="246dp"
+    <ProgressBar
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="20dp"
-        android:text="مجموعه ۱"
-        android:id="@+id/bmajmoe1"
-        android:layout_gravity="right" />
+        android:id="@+id/loading"
+        android:layout_centerInParent="true"/>
 
-    <Button
-        android:layout_width="246dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:text="مجموعه ۲"
-        android:id="@+id/bmajmoe2"
-        android:layout_gravity="right"/>
 
-    <Button
-        android:layout_width="246dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:text="مجموعه ۳"
-        android:id="@+id/bmajmoe3"
-        android:layout_gravity="right"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+    </android.support.v7.widget.RecyclerView>
 
-</LinearLayout>
+</RelativeLayout>

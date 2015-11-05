@@ -43,6 +43,11 @@
         شماره تلفن: ۰۹۱۹۲۵۴۸۴۳۴ \n\n
         رایانامه: arafatimahmoud@yahoo.com \n\n
         </string>
+
+
     <string name="close">Close</string>
     <string name="open">Open</string>
+    <string name="domainURL">http://pfont.ir</string>
+    <string name="list_empty">آثاری موجود موجود نیست</string>
+    <string name="error_connection">خطا در برقراری ارتباط</string>
 </resources>
