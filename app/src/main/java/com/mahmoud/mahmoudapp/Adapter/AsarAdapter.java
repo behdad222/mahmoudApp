@@ -1,6 +1,9 @@
 package com.mahmoud.mahmoudapp.Adapter;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,20 +11,23 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.mahmoud.mahmoudapp.Entity.Photo;
+import com.mahmoud.mahmoudapp.Entity.Album;
 import com.mahmoud.mahmoudapp.R;
-import com.mahmoud.mahmoudapp.View.ImageDialog;
+import com.mahmoud.mahmoudapp.View.Activity.MainActivity;
+import com.mahmoud.mahmoudapp.View.Fragment.AlbumFragment;
+import com.mahmoud.mahmoudapp.View.Fragment.AsarFragment;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> {
-    private Context context;
-    private ArrayList<Photo> photos;
+public class AsarAdapter extends RecyclerView.Adapter<AsarAdapter.ViewHolder> {
 
-    public AlbumAdapter(Context context, ArrayList<Photo> photos) {
+    private Context context;
+    private ArrayList<Album> albums;
+
+    public AsarAdapter(Context context, ArrayList<Album> albums) {
         this.context = context;
-        this.photos = photos;
+        this.albums = albums;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -37,30 +43,39 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.ViewHolder> 
 
         @Override
         public void onClick(View view) {
-            new ImageDialog(context, photos, getAdapterPosition()).show();
+            AlbumFragment fragment = new AlbumFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("title", albums.get(getAdapterPosition()).getTitle());
+
+            fragment.setArguments(bundle);
+
+            FragmentTransaction transaction = ((MainActivity) context).getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.frame, fragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
+
         }
     }
 
     @Override
-    public AlbumAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public AsarAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
                 .inflate(R.layout.album_cover, parent, false);
-
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Picasso.with(context)
-                .load(photos.get(position).getUrl())
+                .load(albums.get(position).getCover())
                 .into(holder.cover);
 
-        holder.title.setText(photos.get(position).getDescripton());
+        holder.title.setText(albums.get(position).getTitle());
     }
 
     @Override
     public int getItemCount() {
-        return photos.size();
+        return albums.size();
     }
 }

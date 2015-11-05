@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,15 +11,15 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.mahmoud.mahmoudapp.Adapter.AsarAdapter;
 import com.mahmoud.mahmoudapp.DB.DBAdapter;
 import com.mahmoud.mahmoudapp.DB.Model.AlbumModel;
+import com.mahmoud.mahmoudapp.Entity.Album;
+import com.mahmoud.mahmoudapp.Entity.Asar;
 import com.mahmoud.mahmoudapp.Entity.Photo;
 import com.mahmoud.mahmoudapp.Interface.GetAsarApi;
 import com.mahmoud.mahmoudapp.R;
 import com.mahmoud.mahmoudapp.Tools;
-import com.mahmoud.mahmoudapp.Adapter.AlbumAdapter;
-import com.mahmoud.mahmoudapp.Entity.Album;
-import com.mahmoud.mahmoudapp.Entity.Asar;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,7 +32,7 @@ import retrofit.client.Response;
 
 public class AsarFragment extends Fragment  {
     private RecyclerView recyclerView;
-    private AlbumAdapter adapter;
+    private AsarAdapter adapter;
     private DBAdapter db;
     private ArrayList<Album> albums;
     private Tools tools;
@@ -57,7 +56,7 @@ public class AsarFragment extends Fragment  {
         recyclerView = (RecyclerView) view.findViewById(R.id.RecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        adapter = new AlbumAdapter(getContext(), albums);
+        adapter = new AsarAdapter(getContext(), albums);
         recyclerView.setAdapter(adapter);
 
         if (tools.internetChek()) {
@@ -123,7 +122,7 @@ public class AsarFragment extends Fragment  {
                 photo.setUrl(albumsModel.get(i).getPhotos().get(j).getUrl());
                 photo.setDescripton(albumsModel.get(i).getPhotos().get(j).getDescripton());
 
-                photos[i]=photo;
+                photos[j]=photo;
             }
 
             album.setPhotos(photos);
