@@ -37,7 +37,7 @@ public class ImageDialog extends Dialog implements ViewPager.OnPageChangeListene
 
         viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setAdapter(new ImagePagerAdapter(context, photos));
-        viewPager.setCurrentItem(num);
+        viewPager.setCurrentItem(photos.size() - num - 1);
         viewPager.addOnPageChangeListener(this);
 
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();

@@ -40,7 +40,7 @@ public class ImagePagerAdapter extends PagerAdapter {
 
         View viewLayout = inflater.inflate(R.layout.dialog_image_fullscreen, container, false);
         ImageView imageView = (ImageView) viewLayout.findViewById(R.id.image);
-        Picasso.with(context).load(photos.get(position).getUrl()).into(imageView);
+        Picasso.with(context).load(photos.get(getCount() - position - 1).getUrl()).into(imageView);
         container.addView(viewLayout);
 
         return viewLayout;
