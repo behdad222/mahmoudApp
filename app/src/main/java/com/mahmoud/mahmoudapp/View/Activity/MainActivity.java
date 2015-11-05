@@ -1,5 +1,6 @@
 package com.mahmoud.mahmoudapp.View.Activity;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -16,6 +17,8 @@ import com.mahmoud.mahmoudapp.View.Fragment.AsarFragment;
 import com.mahmoud.mahmoudapp.View.Fragment.BiographyFragment;
 import com.mahmoud.mahmoudapp.View.Fragment.ErtebatBaMaFragment;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawerLayout;
@@ -23,6 +26,14 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Locale locale = new Locale("fa");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
+
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
