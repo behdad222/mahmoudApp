@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="drawer_titles">
+        <item>آثار</item>
+        <item>بیوگرافی</item>
+        <item>ارتباط با ما</item>
+        <item>درباره نرم‌افزار</item>
+        <item>خروج</item>
+    </string-array>
+
+    <string-array name="drawer_icon">
+        <item>{zmdi-compass}</item>
+        <item>{zmdi-compass}</item>
+        <item>{zmdi-compass}</item>
+        <item>{zmdi-compass}</item>
+        <item>{zmdi-compass}</item>
+    </string-array>
+</resources>

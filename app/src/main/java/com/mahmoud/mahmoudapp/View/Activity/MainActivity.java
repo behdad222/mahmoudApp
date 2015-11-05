@@ -2,15 +2,17 @@ package com.mahmoud.mahmoudapp.View.Activity;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
+import android.view.KeyEvent;
 import android.view.View;
 
+import com.mahmoud.mahmoudapp.Adapter.DrawerAdapter;
 import com.mahmoud.mahmoudapp.R;
 import com.mahmoud.mahmoudapp.View.Fragment.AboutFragment;
 import com.mahmoud.mahmoudapp.View.Fragment.AsarFragment;
@@ -19,9 +21,16 @@ import com.mahmoud.mahmoudapp.View.Fragment.ErtebatBaMaFragment;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity {
+    public static final int WORKS = 0;
+    public static final int BIOGRAPHY = 1;
+    public static final int CONTACT_US = 2;
+    public static final int ABOUT = 3;
+    public static final int EXIT = 4;
+    public int menuPosition = 0;
+
     private DrawerLayout drawerLayout;
+    private View appMainView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +48,16 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        RecyclerView navigation = (RecyclerView) findViewById(R.id.navigation_view);
+        navigation.setHasFixedSize(true);
+        DrawerAdapter adapter = new DrawerAdapter(this);
+        navigation.setAdapter(adapter);
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        navigation.setLayoutManager(layoutManager);
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+        appMainView = findViewById(R.id.app_main_layout);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout, toolbar,R.string.open, R.string.close){
 
             @Override
@@ -55,65 +70,95 @@ public class MainActivity extends AppCompatActivity
 
                 super.onDrawerOpened(drawerView);
             }
+
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+                super.onDrawerSlide(drawerView, slideOffset);
+                appMainView.setTranslationX(slideOffset * drawerView.getWidth() * -1);
+                drawerLayout.bringChildToFront(drawerView);
+                drawerLayout.requestLayout();
+            }
         };
 
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
-        Fragment fragment = new AsarFragment();
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.frame, fragment)
+                .replace(R.id.frame, new AsarFragment())
                 .commit();
     }
 
     @Override
-    public boolean onNavigationItemSelected(MenuItem menuItem) {
-        menuItem.setChecked(true);
-        drawerLayout.closeDrawers();
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // Checking for the "menu" key
+        if (keyCode == KeyEvent.KEYCODE_MENU) {
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                drawerLayout.closeDrawers();
+            } else {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+            return true;
+        } else {
+            return super.onKeyDown(keyCode, event);
+        }
+    }
 
-        Fragment fragment;
+    public void selectItem(int position) {
+        switch (position){
 
-        switch (menuItem.getItemId()){
-
-            case R.id.asar:
-                fragment = new AsarFragment();
+            case WORKS:
+                if (menuPosition != WORKS) {
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.frame, fragment)
+                        .replace(R.id.frame, new AsarFragment())
                         .commit();
-                return true;
+                    menuPosition = WORKS;
+                }
 
-            case R.id.bio:
-                fragment = new BiographyFragment();
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.frame, fragment)
-                        .commit();
-                return true;
+                break;
 
-            case R.id.ertebat:
-                fragment = new ErtebatBaMaFragment();
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.frame, fragment)
-                        .commit();
-                return true;
+            case BIOGRAPHY:
+                if (menuPosition != BIOGRAPHY) {
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.frame, new BiographyFragment())
+                            .commit();
+                    menuPosition = BIOGRAPHY;
+                }
 
-            case R.id.about:
-                fragment = new AboutFragment();
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.frame, fragment)
-                        .commit();
-                return true;
+                break;
 
-            case R.id.exit:
+            case CONTACT_US:
+                if (menuPosition != CONTACT_US) {
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.frame, new ErtebatBaMaFragment())
+                            .commit();
+                    menuPosition = CONTACT_US;
+                }
+
+                break;
+
+            case ABOUT:
+                if (menuPosition != ABOUT) {
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.frame, new AboutFragment())
+                            .commit();
+                    menuPosition = ABOUT;
+                }
+
+                break;
+
+            case EXIT:
                 finish();
-                return true;
+                break;
 
             default:
-                return false;
+                break;
         }
+
+        drawerLayout.closeDrawers();
     }
 }
