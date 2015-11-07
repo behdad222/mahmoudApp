@@ -9,10 +9,10 @@
     </string-array>
 
     <string-array name="drawer_icon">
-        <item>{zmdi-compass}</item>
-        <item>{zmdi-compass}</item>
-        <item>{zmdi-compass}</item>
-        <item>{zmdi-compass}</item>
-        <item>{zmdi-compass}</item>
+        <item>{zmdi-collection-image}</item>
+        <item>{zmdi-account}</item>
+        <item>{zmdi-phone}</item>
+        <item>{zmdi-info}</item>
+        <item>{zmdi-close}</item>
     </string-array>
 </resources>
