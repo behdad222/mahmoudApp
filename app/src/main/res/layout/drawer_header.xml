@@ -7,8 +7,10 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="23dp"
         android:scaleType="fitCenter"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/logo"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginTop="23dp" />
 
 </RelativeLayout>

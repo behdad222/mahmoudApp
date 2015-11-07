@@ -48,6 +48,6 @@
     <string name="close">Close</string>
     <string name="open">Open</string>
     <string name="domainURL">http://pfont.ir</string>
-    <string name="list_empty">آثاری موجود موجود نیست</string>
+    <string name="list_empty">آثاری موجود نیست</string>
     <string name="error_connection">خطا در برقراری ارتباط</string>
 </resources>
