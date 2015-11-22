@@ -19,7 +19,7 @@ public class AboutFragment extends Fragment  {
 
         View view = inflater.inflate(R.layout.about, container, false);
 
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(getResources().getStringArray(R.array.drawer_titles)[3]);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(getResources().getStringArray(R.array.drawer_titles)[4]);
 
         return view;
     }

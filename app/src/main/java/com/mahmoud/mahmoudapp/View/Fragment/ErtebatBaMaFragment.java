@@ -19,7 +19,7 @@ public class ErtebatBaMaFragment extends Fragment  {
 
         View view = inflater.inflate(R.layout.ertebat, container, false);
 
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(getResources().getStringArray(R.array.drawer_titles)[2]);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(getResources().getStringArray(R.array.drawer_titles)[3]);
 
         return view;
     }

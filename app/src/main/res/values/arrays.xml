@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="drawer_titles">
+        <item>پروفایل</item>
         <item>آثار</item>
         <item>بیوگرافی</item>
         <item>ارتباط با ما</item>
@@ -9,6 +10,7 @@
     </string-array>
 
     <string-array name="drawer_icon">
+        <item>{zmdi-collection-image}</item>
         <item>{zmdi-collection-image}</item>
         <item>{zmdi-account}</item>
         <item>{zmdi-phone}</item>

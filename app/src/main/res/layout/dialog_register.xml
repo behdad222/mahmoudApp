@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appCompat="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cc000000"
+    android:gravity="center">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@color/parent_card_background"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ProgressBar
+                android:id="@+id/loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="Last name" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/cell"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="Phone"
+                    android:inputType="phone" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="Password"
+                    android:inputType="textPassword" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:text="ثبت نام"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

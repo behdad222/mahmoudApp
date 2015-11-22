@@ -30,4 +30,5 @@ dependencies {
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'io.realm:realm-android:0.82.2'
     compile 'com.malinskiy:materialicons:1.0.2'
+    compile 'com.pixplicity.easyprefs:library:1.7'
 }

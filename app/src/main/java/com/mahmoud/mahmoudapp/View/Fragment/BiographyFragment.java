@@ -19,7 +19,7 @@ public class BiographyFragment extends Fragment  {
 
         View view = inflater.inflate(R.layout.bio, container, false);
 
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(getResources().getStringArray(R.array.drawer_titles)[1]);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(getResources().getStringArray(R.array.drawer_titles)[2]);
 
         return view;
     }

@@ -47,7 +47,7 @@ public class AsarFragment extends Fragment  {
 
         View view = inflater.inflate(R.layout.asar, container, false);
 
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(getResources().getStringArray(R.array.drawer_titles)[0]);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(getResources().getStringArray(R.array.drawer_titles)[1]);
 
         tools = new Tools(getContext());
         albums = new ArrayList<>();

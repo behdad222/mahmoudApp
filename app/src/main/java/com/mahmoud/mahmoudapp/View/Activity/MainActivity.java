@@ -1,5 +1,6 @@
 package com.mahmoud.mahmoudapp.View.Activity;
 
+import android.content.ContextWrapper;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
@@ -18,23 +19,35 @@ import com.mahmoud.mahmoudapp.View.Fragment.AboutFragment;
 import com.mahmoud.mahmoudapp.View.Fragment.AsarFragment;
 import com.mahmoud.mahmoudapp.View.Fragment.BiographyFragment;
 import com.mahmoud.mahmoudapp.View.Fragment.ErtebatBaMaFragment;
+import com.mahmoud.mahmoudapp.View.Fragment.ProfileFragment;
+import com.pixplicity.easyprefs.library.Prefs;
 
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-    public static final int WORKS = 0;
-    public static final int BIOGRAPHY = 1;
-    public static final int CONTACT_US = 2;
-    public static final int ABOUT = 3;
-    public static final int EXIT = 4;
-    public int menuPosition = 0;
+    public static final int PROFILE = 0;
+    public static final int WORKS = 1;
+    public static final int BIOGRAPHY = 2;
+    public static final int CONTACT_US = 3;
+    public static final int ABOUT = 4;
+    public static final int EXIT = 5;
+    public int menuPosition = 1;
 
     private DrawerLayout drawerLayout;
     private View appMainView;
 
+    private DrawerAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        new Prefs.Builder()
+                .setContext(this)
+                .setMode(ContextWrapper.MODE_PRIVATE)
+                .setPrefsName(getPackageName())
+                .setUseDefaultSharedPreference(true)
+                .build();
 
         Locale locale = new Locale("fa");
         Locale.setDefault(locale);
@@ -50,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView navigation = (RecyclerView) findViewById(R.id.navigation_view);
         navigation.setHasFixedSize(true);
-        DrawerAdapter adapter = new DrawerAdapter(this);
+        adapter = new DrawerAdapter(this);
         navigation.setAdapter(adapter);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
@@ -107,12 +120,23 @@ public class MainActivity extends AppCompatActivity {
     public void selectItem(int position) {
         switch (position){
 
+            case PROFILE:
+                if (menuPosition != PROFILE) {
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.frame, new ProfileFragment())
+                            .commit();
+                    menuPosition = PROFILE;
+                }
+
+                break;
+
             case WORKS:
                 if (menuPosition != WORKS) {
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.frame, new AsarFragment())
-                        .commit();
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.frame, new AsarFragment())
+                            .commit();
                     menuPosition = WORKS;
                 }
 
@@ -160,5 +184,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         drawerLayout.closeDrawers();
+    }
+
+
+
+    public void loadUser() {
+        adapter.notifyDataSetChanged();
     }
 }
